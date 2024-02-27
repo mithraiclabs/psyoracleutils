@@ -1,8 +1,12 @@
 [package]
 name = "psyoracleutils"
 version = "0.1.0"
-description = "Created with Anchor"
+description = "Oracle-Agnostic tools to fetch prices on Solana."
 edition = "2021"
+readme = "../../README.md"
+authors = ["PsyOptions <contact@psyoptions.io>"]
+license = "AGPL-3.0-or-later"
+keywords = ["clpvault", "psyoptions", "psyfi", "solana", "anchor"]
 
 [lib]
 crate-type = ["cdylib", "lib"]
@@ -14,6 +18,13 @@ no-idl = []
 no-log-ix-name = []
 cpi = ["no-entrypoint"]
 default = []
+localnet = []
+devnet-deploy = []
 
 [dependencies]
 anchor-lang = "0.28.0"
+anchor-spl = "0.28.0"
+bytemuck = { version = "1.7", features = ["derive"] }
+
+switchboard-v2 = "0.4.0"
+pyth-sdk-solana = "0.8.0"
